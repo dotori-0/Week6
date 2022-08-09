@@ -22,6 +22,13 @@
 		0A60F09A28A09511008538AF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F09928A09511008538AF /* URL+Extension.swift */; };
 		0A60F09E28A0A790008538AF /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F09D28A0A78F008538AF /* KakaoAPIManager.swift */; };
 		0A60F0A028A0ABF5008538AF /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F09F28A0ABF5008538AF /* ClosureViewController.swift */; };
+		0AFD374B28A1E032002D10B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD374A28A1E032002D10B8 /* CustomButton.swift */; };
+		0AFD375028A1E605002D10B8 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFD374F28A1E605002D10B8 /* CardView.xib */; };
+		0AFD375228A1E633002D10B8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD375128A1E633002D10B8 /* CardView.swift */; };
+		0AFD375528A1F394002D10B8 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD375328A1F394002D10B8 /* CardCollectionViewCell.swift */; };
+		0AFD375628A1F394002D10B8 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFD375428A1F394002D10B8 /* CardCollectionViewCell.xib */; };
+		0AFD375828A1F64A002D10B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD375728A1F64A002D10B8 /* MainViewController.swift */; };
+		0AFD375A28A1FC38002D10B8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD375928A1FC38002D10B8 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		0A60F09928A09511008538AF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		0A60F09D28A0A78F008538AF /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		0A60F09F28A0ABF5008538AF /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		0AFD374A28A1E032002D10B8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		0AFD374F28A1E605002D10B8 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		0AFD375128A1E633002D10B8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0AFD375328A1F394002D10B8 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AFD375428A1F394002D10B8 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		0AFD375728A1F64A002D10B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0AFD375928A1FC38002D10B8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,13 +91,15 @@
 			children = (
 				0A60F09428A0910A008538AF /* APIKey.swift */,
 				0A60F09628A09483008538AF /* Network */,
-				0A60F07528A08FE4008538AF /* AppDelegate.swift */,
-				0A60F07728A08FE4008538AF /* SceneDelegate.swift */,
+				0AFD374928A1DFE5002D10B8 /* View */,
 				0A60F07B28A08FE4008538AF /* Main.storyboard */,
+				0AFD375728A1F64A002D10B8 /* MainViewController.swift */,
 				0A60F07928A08FE4008538AF /* BlogSearchViewController.swift */,
 				0A60F09F28A0ABF5008538AF /* ClosureViewController.swift */,
-				0A60F07E28A08FE5008538AF /* Assets.xcassets */,
+				0A60F07528A08FE4008538AF /* AppDelegate.swift */,
+				0A60F07728A08FE4008538AF /* SceneDelegate.swift */,
 				0A60F08028A08FE5008538AF /* LaunchScreen.storyboard */,
+				0A60F07E28A08FE5008538AF /* Assets.xcassets */,
 				0A60F08328A08FE5008538AF /* Info.plist */,
 			);
 			path = Week6;
@@ -97,6 +113,19 @@
 				0A60F09D28A0A78F008538AF /* KakaoAPIManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0AFD374928A1DFE5002D10B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AFD374A28A1E032002D10B8 /* CustomButton.swift */,
+				0AFD374F28A1E605002D10B8 /* CardView.xib */,
+				0AFD375128A1E633002D10B8 /* CardView.swift */,
+				0AFD375328A1F394002D10B8 /* CardCollectionViewCell.swift */,
+				0AFD375428A1F394002D10B8 /* CardCollectionViewCell.xib */,
+				0AFD375928A1FC38002D10B8 /* MainTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +198,9 @@
 			files = (
 				0A60F09328A090BF008538AF /* .gitignore in Resources */,
 				0A60F08228A08FE5008538AF /* LaunchScreen.storyboard in Resources */,
+				0AFD375028A1E605002D10B8 /* CardView.xib in Resources */,
 				0A60F07F28A08FE5008538AF /* Assets.xcassets in Resources */,
+				0AFD375628A1F394002D10B8 /* CardCollectionViewCell.xib in Resources */,
 				0A60F07D28A08FE4008538AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,9 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFD375A28A1FC38002D10B8 /* MainTableViewCell.swift in Sources */,
 				0A60F07A28A08FE4008538AF /* BlogSearchViewController.swift in Sources */,
 				0A60F07628A08FE4008538AF /* AppDelegate.swift in Sources */,
+				0AFD374B28A1E032002D10B8 /* CustomButton.swift in Sources */,
+				0AFD375828A1F64A002D10B8 /* MainViewController.swift in Sources */,
+				0AFD375528A1F394002D10B8 /* CardCollectionViewCell.swift in Sources */,
 				0A60F0A028A0ABF5008538AF /* ClosureViewController.swift in Sources */,
+				0AFD375228A1E633002D10B8 /* CardView.swift in Sources */,
 				0A60F09528A0910A008538AF /* APIKey.swift in Sources */,
 				0A60F07828A08FE4008538AF /* SceneDelegate.swift in Sources */,
 				0A60F09E28A0A790008538AF /* KakaoAPIManager.swift in Sources */,

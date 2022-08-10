@@ -14,8 +14,18 @@ class CardCollectionViewCell: UICollectionViewCell {
     // 변경되지 않는 UI
     override func awakeFromNib() {  // 타입 메서드가 아니라 인스턴스 메서드로
         super.awakeFromNib()
+//        print("🍎 CardCollectionViewCell", #function)
+        
         setupUI()
     }
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        cardView.contentLabel.text = nil
+    }
+    
     
     // 셀이 생성될 때만 실행되고, 재사용될 때는 실행 X
     // cellForRowAt보다 먼저 동작
@@ -25,5 +35,4 @@ class CardCollectionViewCell: UICollectionViewCell {
         cardView.imageView.layer.cornerRadius = 10
         cardView.likeButton.tintColor = .systemPink
     }
-
 }

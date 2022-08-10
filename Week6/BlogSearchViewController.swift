@@ -20,7 +20,7 @@ import SwiftyJSON
  - 컨텐츠 양에 따라서 셀 높이가 자유롭게 지정
  - 조건 1: 레이블 numberOfLines 0
  - 조건 2: tableView row Height automaticDimension
- - 조건 3:
+ - 조건 3: 레이아웃
  */
 
 

@@ -7,6 +7,27 @@
 
 import UIKit
 
+import Kingfisher
+
+/*
+ tableView - collectionView > 프로토콜
+ */
+
+/*
+ awakeFromNib    - 셀 UI 초기화, 재사용 매커니즘에 의해 일정 횟수 이상 호출되지 않음
+ cellForItemAt   - 재사용될 때마다, 사용자에게 보일 때마다 호출됨
+                 - 화면과 데이터는 별개이기 때문에, 모든 indexPath.item에 대한 조건이 없다면 재사용 시 오류가 발생할 수 있음
+ prepareForReuse - 셀이 재사용될 때 초기화 하고자 하는 값을 넣으면 오류를 해결할 수 있음.
+                   즉, cellForRowAt에서 모든 indexPath.item에 대한 조건을 처리하지 않아도 됨!
+ 
+ CollectionView in TableView
+    - 하나의 컬렉션뷰나 테이블 뷰라면 문제 X
+    - 컬렉션뷰 안에 테이블뷰, 테이블뷰 안에 컬렉션 뷰 등 복합적인 구조라면, 테이블셀도 재사용되어야 하고 컬렉션셀도 재사용되어야 함
+    - Index > reloadData
+ 
+ - print, Debug
+ */
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var bannerCollectionView: UICollectionView!
@@ -78,7 +99,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 //        print(#function, "태그 지정")
         cell.contentCollectionView.tag = indexPath.section  // Tag: UIView의 프로퍼티
         cell.contentCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
-        cell.contentCollectionView.reloadData()
+//        cell.contentCollectionView.reloadData()  // Index out of range 해결
+        // 컬렉션뷰셀의 갯수가 적어서 디바이스에서 한 번에 볼 수 있는 경우라면 재사용에 해당하지 않기 때문에 index out of range 문제가 발생하지 않을 수 있다
         
         return cell
     }

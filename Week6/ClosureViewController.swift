@@ -8,13 +8,33 @@
 import UIKit
 
 class ClosureViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var cardView: CardView!
+    @IBOutlet weak var violetView: UIButton!
+    
+    // Frame Based
+    var sampleButton = UIButton()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 위치, 크기, 추가 코드 (화면에 보이게 하기 위함)
+        /*
+         오토리사이징을 오토레이아웃 제약조건처럼 설정해 주는 기능이 내부적으로 구현되어 있음
+         이 기능은 디폴트가 true, 하지만 오토레이아웃을 지정하면 오토리사이징을 안 쓰겠다는 의미인 false로 상태가 내부적으로 변경됨!
+         오토리사이징으로 설정한 값과 오토레이아웃으로 설정한 값이 충돌나기 때문
+         코드 기반 레이아웃 UI > true
+         인더페이스 빌더 기반 레이아웃 UI > false 
+         autoresizing -> autolayout constraints
+         */
+//        print(sampleButton.autoresizingMask)  // ➕
+        print(violetView.translatesAutoresizingMaskIntoConstraints)
+        print(sampleButton.translatesAutoresizingMaskIntoConstraints)
+        print(cardView.translatesAutoresizingMaskIntoConstraints)
+        sampleButton.frame = CGRect(x: 100, y: 400, width: 100, height: 100)
+        sampleButton.backgroundColor = .systemGreen
+        view.addSubview(sampleButton)
 
         cardView.imageView.backgroundColor = .red
         cardView.likeButton.backgroundColor = .yellow

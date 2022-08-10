@@ -43,8 +43,12 @@ class CardView: UIView {
         view.frame = bounds  // CardView라고 하는 파일이 가지고 있는 크기를 모서리랑 똑같이 그대로 맞춰주는 작업
         view.backgroundColor = .lightGray  // 공통적 요소는 여기에서 해도 가능하다 (그림자 등)
         self.addSubview(view)  // 초기화할 때 파일 오너에 추가
+        
+        // 카드뷰를 인터페이스 기반으로 만들고, 레이아웃도 설정했는데 false가 아닌 true로 나온다...
+        // true: 오토레이아웃 적용이 되는 관점보다, 오토리사이징이 내부적으로 constraints 처리가 됨..
+        print("💎", view.translatesAutoresizingMaskIntoConstraints)
+        print("💟", self.translatesAutoresizingMaskIntoConstraints)
     }
-    
 }
 
 

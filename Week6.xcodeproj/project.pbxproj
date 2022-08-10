@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A10475928A3307B0095CB80 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10475828A3307B0095CB80 /* ReusableViewProtocol.swift */; };
+		0A10475B28A343D90095CB80 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10475A28A343D90095CB80 /* TMDBAPIManager.swift */; };
 		0A60F07628A08FE4008538AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07528A08FE4008538AF /* AppDelegate.swift */; };
 		0A60F07828A08FE4008538AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07728A08FE4008538AF /* SceneDelegate.swift */; };
 		0A60F07A28A08FE4008538AF /* BlogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07928A08FE4008538AF /* BlogSearchViewController.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A10475828A3307B0095CB80 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		0A10475A28A343D90095CB80 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		0A60F07228A08FE4008538AF /* Week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A60F07528A08FE4008538AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A60F07728A08FE4008538AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A10475728A3305C0095CB80 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0A10475828A3307B0095CB80 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		0A60F06928A08FE4008538AF = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 		0A60F07428A08FE4008538AF /* Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				0A10475728A3305C0095CB80 /* Protocol */,
 				0A60F09428A0910A008538AF /* APIKey.swift */,
 				0A60F09628A09483008538AF /* Network */,
 				0AFD374928A1DFE5002D10B8 /* View */,
@@ -111,6 +124,7 @@
 				0A60F09728A09499008538AF /* Endpoint.swift */,
 				0A60F09928A09511008538AF /* URL+Extension.swift */,
 				0A60F09D28A0A78F008538AF /* KakaoAPIManager.swift */,
+				0A10475A28A343D90095CB80 /* TMDBAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -223,7 +237,9 @@
 				0A60F09528A0910A008538AF /* APIKey.swift in Sources */,
 				0A60F07828A08FE4008538AF /* SceneDelegate.swift in Sources */,
 				0A60F09E28A0A790008538AF /* KakaoAPIManager.swift in Sources */,
+				0A10475928A3307B0095CB80 /* ReusableViewProtocol.swift in Sources */,
 				0A60F09828A09499008538AF /* Endpoint.swift in Sources */,
+				0A10475B28A343D90095CB80 /* TMDBAPIManager.swift in Sources */,
 				0A60F09A28A09511008538AF /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JZ9V99JF7T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Week6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -398,6 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JZ9V99JF7T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Week6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -15,12 +15,15 @@ class MainViewController: UIViewController {
     let color: [UIColor] = [.systemMint, .systemIndigo, .yellow, .systemGreen, .black]
     let numberList: [[Int]] = [
         [Int](100...110),
-        [Int](55...65),
+        [Int](55...75),
         [Int](5000...5006),
+        [Int](51...60),
         [Int](61...70),
-        [Int](71...80),
+        [Int](71...75),
         [Int](81...90)
     ]
+    
+    var episodeList: [[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,15 @@ class MainViewController: UIViewController {
         
         mainTableview.dataSource = self
         mainTableview.delegate = self
+        
+        TMDBAPIManager.shared.requestImage() { stillPaths in
+            dump(stillPaths)
+            // 1. 네트워크 통신   2. 배열 생성(episodeList)   3. 배열에 담기
+            // 4. 뷰에 표현 (ex. 테이블뷰 섹션, 컬렉션 뷰 셀)
+            // 5. 뷰 갱신!
+            self.episodeList = stillPaths
+            self.mainTableview.reloadData()
+        }
     }
     
 }
@@ -41,24 +53,30 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return numberList.count
+        return episodeList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
+    // 내부 매개변수 tableView를 통해 테이블뷰를 특정
+    // 테이블뷰 객체가 하나일 경우에는 내부 매개변수를 활용하지 않아도 문제가 생기지 않는다
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 참고: 내부 매개변수 tableView, indexPath 등은 바꿔서 사용할 수 있다 (왠만하면 바꾸지 않음)
+        print("🍑 MainViewController", #function, indexPath)
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
             print("Cannot find MainTableViewCell")
             return UITableViewCell()
         }
-        cell.backgroundColor = .yellow
-        cell.contentCollectionView.backgroundColor = .systemGray6
+        cell.backgroundColor = .systemIndigo
+        cell.titleLabel.text = TMDBAPIManager.shared.tvList[indexPath.section].0
+        cell.contentCollectionView.backgroundColor = .yellow
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.delegate = self
-        print(#function, "태그 지정")
-        cell.contentCollectionView.tag = indexPath.section
+//        print(#function, "태그 지정")
+        cell.contentCollectionView.tag = indexPath.section  // Tag: UIView의 프로퍼티
         cell.contentCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
         cell.contentCollectionView.reloadData()
         
@@ -68,7 +86,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return indexPath.section == 3 ? 350 : 190
 //        return UITableView.automaticDimension
-        return 190
+        return 290
     }
 }
 
@@ -76,10 +94,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 // 하나의 프로토콜과 메서드에서 여러 컬렉션뷰의 datasource, delegate 구현해야 함
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == bannerCollectionView ? color.count : numberList[collectionView.tag].count
+        return collectionView == bannerCollectionView ? color.count : episodeList[collectionView.tag].count
     }
     
+    // collectionView에 bannerCollectionView가 들어올 수도 있고, 테이블뷰 안에 들어있는 컬렉션뷰가 들어올 수도 있다
+    // 내부 매개변수가 아닌 명확한 아웃렛을 사용할 경우, 셀 재사용 시 특정 collectionView의 셀을 재사용하게 될 수 있음 주의!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("🍑 MainViewController", #function, indexPath)
+        
+        // 여기에서 bannerCollectionView.dequeueReusableCell...을 하면,
+        // 재사용하는 셀을 무조건 bannerCollectionView에서 가져오게 된다
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else {
             print("Cannot find CardCollectionViewCell")
             return UICollectionViewCell()
@@ -91,8 +115,19 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 //            cell.cardView.imageView.backgroundColor =  collectionView.tag.isMultiple(of: 2) ? .systemGreen : .brown  // 왔다갔다 할 때마다 셀 컬러가 이상하기 때문에, 셀의 재사용을 잘 고려해야 한다
             cell.cardView.imageView.backgroundColor = .systemGreen
             cell.cardView.contentLabel.textColor = .white
-            print(#function, "태그 불러오기")
-            cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+            
+            let url = URL(string: "\(TMDBAPIManager.shared.imageURL)\(episodeList[collectionView.tag][indexPath.item])")
+            cell.cardView.imageView.kf.setImage(with: url)
+//            if indexPath.item < 2 {
+////              print(#function, "태그 불러오기")
+//                cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+//            }
+//            else {
+//                cell.cardView.contentLabel.text = "🍋"
+//            }
+            
+//            print(#function, "태그 불러오기")
+//            cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
             
             cell.cardView.backgroundColor = .black
         }

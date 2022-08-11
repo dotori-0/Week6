@@ -99,7 +99,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 //        print(#function, "태그 지정")
         cell.contentCollectionView.tag = indexPath.section  // Tag: UIView의 프로퍼티
         cell.contentCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
-//        cell.contentCollectionView.reloadData()  // Index out of range 해결
+        cell.contentCollectionView.reloadData()  // Index out of range 해결
         // 컬렉션뷰셀의 갯수가 적어서 디바이스에서 한 번에 볼 수 있는 경우라면 재사용에 해당하지 않기 때문에 index out of range 문제가 발생하지 않을 수 있다
         
         return cell

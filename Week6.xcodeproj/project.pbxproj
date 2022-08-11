@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A10475928A3307B0095CB80 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10475828A3307B0095CB80 /* ReusableViewProtocol.swift */; };
 		0A10475B28A343D90095CB80 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10475A28A343D90095CB80 /* TMDBAPIManager.swift */; };
+		0A53C70A28A493950009830B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53C70928A493950009830B /* MapViewController.swift */; };
 		0A60F07628A08FE4008538AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07528A08FE4008538AF /* AppDelegate.swift */; };
 		0A60F07828A08FE4008538AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07728A08FE4008538AF /* SceneDelegate.swift */; };
 		0A60F07A28A08FE4008538AF /* BlogSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F07928A08FE4008538AF /* BlogSearchViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		0A10475828A3307B0095CB80 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		0A10475A28A343D90095CB80 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		0A53C70928A493950009830B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0A60F07228A08FE4008538AF /* Week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A60F07528A08FE4008538AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A60F07728A08FE4008538AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0A60F09628A09483008538AF /* Network */,
 				0AFD374928A1DFE5002D10B8 /* View */,
 				0A60F07B28A08FE4008538AF /* Main.storyboard */,
+				0A53C70928A493950009830B /* MapViewController.swift */,
 				0AFD375728A1F64A002D10B8 /* MainViewController.swift */,
 				0A60F07928A08FE4008538AF /* BlogSearchViewController.swift */,
 				0A60F09F28A0ABF5008538AF /* ClosureViewController.swift */,
@@ -241,6 +244,7 @@
 				0A60F09828A09499008538AF /* Endpoint.swift in Sources */,
 				0A10475B28A343D90095CB80 /* TMDBAPIManager.swift in Sources */,
 				0A60F09A28A09511008538AF /* URL+Extension.swift in Sources */,
+				0A53C70A28A493950009830B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

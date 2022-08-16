@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
 //        checkUserDeviceLocationServiceAuthorization()
         print(#function)
         
-        let center = CLLocationCoordinate2D(latitude: 40, longitude: 100)
+        let center = CLLocationCoordinate2D(latitude: 28.370722, longitude: -81.558693)
         setRegionAndAnnotation(center: center)
     }
     
@@ -89,6 +89,7 @@ extension MapViewController {
         if #available(iOS 14.0, *) {
             // 인스턴스를 통해 locationManager가 가지고 있는 상태를 가져옴
             authorizationStatus = locationManager.authorizationStatus
+            print("🍋", authorizationStatus.rawValue)
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus()
         }
@@ -174,6 +175,7 @@ extension MapViewController: CLLocationManagerDelegate {
 //            setRegionAndAnnotation(center: center)
             
             setRegionAndAnnotation(center: coordinate)
+            // 날씨 정보 API 요청
         }
         
         // 위치 업데이트 멈춰!
